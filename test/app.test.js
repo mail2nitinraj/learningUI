@@ -1,6 +1,7 @@
 var List = require('../app');
 
 var assert = require('assert');
+/*from cmd*/
 
 describe('add data to list', function() {
 	it('should add to HEAD', function() {
