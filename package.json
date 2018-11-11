@@ -4,9 +4,11 @@
 	"description": "",
 	"main": "app.js",
 	"scripts": {
-		"test": "mocha "
+		"test": "mocha ./test/utility.test.js --watch"
 	},
 	"author": "",
 	"license": "ISC",
-	"dependencies": {}
+	"dependencies": {
+		"mocha": "^5.2.0"
+	}
 }
