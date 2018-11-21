@@ -4,11 +4,13 @@
 	"description": "",
 	"main": "app.js",
 	"scripts": {
+		"start": "nodemon playground.js",
 		"test": "mocha ./test/utility.test.js --watch"
 	},
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		"mocha": "^5.2.0"
+		"mocha": "^5.2.0",
+		"nodemon": "^1.18.6"
 	}
 }
