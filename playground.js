@@ -67,3 +67,30 @@ function makeCombinationRec(str) {
 }
 console.log(makeCombinationRec('dog'));
 */
+//fibonacci Number
+/*function fibonacci(n) {
+	var res = [0, 1];
+
+	if (n <= 2) return 1;
+
+	for (var i = 2; i <= n; i++) {
+		res[i] = res[i - 1] + res[i - 2];
+	}
+	return res + ' ' + res[n];
+}
+console.log(fibonacci(12));*/
+/*
+//fibonacci with recursion
+function fibo(inc) {
+	if (inc <= 1) return inc;
+	return fibo(inc - 1) + fibo(inc - 2);
+}
+console.log(fibo(12));*/
+/*
+// string reverse using recursion
+function rever(str) {
+	if (str.length == 1) return str;
+
+	return rever(str.slice(1, str.length)) + str.charAt(0);
+}
+console.log(rever('OLLEH'));*/
