@@ -168,9 +168,9 @@ console.log(num + ' is ' + res);
 		console.log(res);
 	}
 })('dog');*/
-/*
+
 //permutations of string with recursion
-function makeCombinationRec(str) {
+/*function makeCombinationRec(str) {
 	var len = str.length;
 
 	if (len === 1) {
@@ -178,11 +178,12 @@ function makeCombinationRec(str) {
 	}
 	var res = [];
 	for (var i = 0; i < len; i++) {
-		console.log(i, str);
+
 		var c = str[i];
 		var r = str.slice(0, i) + str.slice(i + 1);
 		var results = makeCombinationRec(r);
 		results.forEach(function(v) {
+      console.log(c,v);
 			res.push(c + v);
 		});
 	}
@@ -217,3 +218,38 @@ function rever(str) {
 	return rever(str.slice(1, str.length)) + str.charAt(0);
 }
 console.log(rever('OLLEH'));*/
+
+/*count chars in string
+console.log(((str)=>{
+var arr = [];
+for (var i = 0; i < str.length; i++) {
+  var reg = new RegExp(str[i],'g');
+  arr[i] = str[i] +' = '+str.match(reg).length;
+}
+arr = arr.filter((value, index, self)=>self.indexOf(value) === index);
+return arr;
+})('ppiiyyuusshhh'));
+/**/
+
+/* quick sort 
+
+function quickSORT(arr){
+  if(arr.length <= 1)return arr;
+
+  let leftArr = [];
+  let rightArr = [];
+  let pivot = arr.pop();
+  let newArr = [];
+
+  arr.forEach((value)=>{
+    if(value>pivot)rightArr.push(value);
+    else if(value<=pivot)leftArr.push(value);
+  });
+return newArr.concat(quickSORT(leftArr),pivot,quickSORT(rightArr));
+
+}
+
+console.log(quickSORT([,100,5,1,8,2,9,3]));
+
+
+/***/
