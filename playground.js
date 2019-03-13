@@ -1,4 +1,4 @@
-/*Number reverse
+/*Number reverse*/
 
 ((num)=>{
 let str = num.toString();
@@ -10,7 +10,7 @@ console.log(str, typeof str);
 })(12345);
 /*Number reverse*/
 
-/**check for plaindrome
+/**check for plaindrome*/
 
 console.log(((str)=>{
   str = str.replace(/[' ']/g,'');
@@ -24,13 +24,13 @@ return true;
 })('1 2 32    1'));
 /*check for palindrome*/
 
-/*random number between 5 and 7
+/*random number between 5 and 7*/
 (()=>{
   console.log( 5 +  Math.random() * 2);
 })();
 /**/
 
-/* recursiveFactorial
+/* recursiveFactorial*/
 function recursiveFactorial(num){
   if(num===1){
     return 1;
@@ -40,7 +40,7 @@ function recursiveFactorial(num){
 console.log('Output : '+recursiveFactorial(5));
 /**/
 
-/*recursiveGcd
+/*recursiveGcd*/
 function recursiveGcd(a,b){
   var inp = a < b ? a : b;
     function chkGcd(inp){
@@ -58,7 +58,7 @@ function recursiveGcd(a,b){
 console.log('Output : '+recursiveGcd(100,200));
 /**/
 
-/*Array binary search
+/*Array binary search*/
 
 function bSearch(arr,target){
 
@@ -81,7 +81,7 @@ console.log('Output : ' + bSearch(inpArr,58));
 
 /**/
 
-/*first non repeating char in a string
+/*first non repeating char in a string*/
 console.log(((str)=>{
   for(let i=0 ; i<str.length ; i++){
     let compareStr = str.substr(i+1, str.length);
@@ -181,16 +181,18 @@ console.log(num + ' is ' + res);
 
 		var c = str[i];
 		var r = str.slice(0, i) + str.slice(i + 1);
-		var results = makeCombinationRec(r);
+
+  	var results = makeCombinationRec(r);
+
 		results.forEach(function(v) {
-      console.log(c,v);
-			res.push(c + v);
+      console.log( v);
+    	res.push(c + v);
 		});
 	}
 	return res;
 }
 console.log(makeCombinationRec('dog'));
-*/
+
 //fibonacci Number
 /*function fibonacci(n) {
 	var res = [0, 1];
@@ -231,7 +233,7 @@ return arr;
 })('ppiiyyuusshhh'));
 /**/
 
-/* quick sort 
+/* quick sort
 
 function quickSORT(arr){
   if(arr.length <= 1)return arr;
@@ -253,3 +255,87 @@ console.log(quickSORT([,100,5,1,8,2,9,3]));
 
 
 /***/
+
+/*
+function bubbleSORT(arr)
+{
+for(i = 0; i < arr.length-1; i++){
+  for (var j = 0; j < arr.length-1; j++) {
+    if (arr[j] > arr[j+1]) {
+      swapEl(arr, j, j+1);
+    }
+  }
+}
+function swapEl(arr, index1, index2){
+  var temp = arr[index1];
+  arr[index1] = arr[index2];
+  arr[index2] = temp;
+}
+return arr;
+}
+
+console.log(bubbleSORT([8,1,6,3,5,2]));
+/**/
+/*Merge sort
+
+function mergeSORT(arr){
+  if(arr.length < 2){
+    return arr;
+  }
+
+  var midpoint = Math.floor(arr.length / 2);
+
+  function merge(left , right){
+      var out = [];
+      while(left.length && right.length){
+        out.push(left[0] < right[0] ? left.shift() : right.shift() );
+      }
+
+      while(left.length){
+        out.push(left.shift());
+      }
+
+      while (right.length) {
+        out.push(right.shift());
+      }
+      return out;
+  }
+
+  return merge(
+    mergeSORT(arr.slice(0, midpoint)),mergeSORT(arr.slice(midpoint, arr.length))
+  );
+
+}
+
+console.log(mergeSORT([14,9,3,7,55,2,5,1,4]));
+
+/**/
+/*longest palindrome
+function chkPalin(str){
+  if(str === '' || str.length === 1){
+    return true;
+  }
+  var arr = str.split('');
+  if(arr.pop() === arr.shift()){
+  return  chkPalin(arr.join(''))
+  }else{
+    return false;
+  }
+}
+
+console.log(((str)=>{
+var length = 0;
+var result = '';
+
+  var arr = str.split(' ');
+  arr.forEach((value)=>{
+    if(chkPalin(value)){
+      if(value.length > length){
+        length = value.length;
+        result = value;
+      }
+    }
+  });
+return result;
+})('hi test for 123321  this is nitin'));
+/**/
