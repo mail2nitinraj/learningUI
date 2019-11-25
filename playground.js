@@ -91,8 +91,8 @@ console.log(((str)=>{
   }
 })('the quick brown fox jumps then quickly blow air'));
 
-/**/
-/* array reduce, generator function
+
+/* array reduce, generator function */
 console.log(((arr,str)=>{
 
   function* loopOver(){
@@ -114,34 +114,32 @@ console.log(l.next(), l.next());
 
 
 })([2,3,1,5],'Hello World'));
-/**/
 
-/**/
+
+
 
 
 /**/
 
 /*Prime Number using recursion */
-/*
-function chkPrime(nr, inc) {
-	if (inc == 2) {
-		return true;
-	}
-	//console.log(nr, inc);
-	if (nr % inc === 0) {
-		//console.log('NOT');
-		return false;
-	} else {
-		return chkPrime(nr, inc - 1);
-	}
+
+function rec(n,i){
+ if(i<=2)return i;
+//console.log('IN :: ',n,i);
+
+ if(n % (i-1) ==0){
+   console.log('# HAS A DIVISOR :: ',i-1);
+   return false;
+ }
+  return rec(n,i-1);
 }
 
-var num = 23;
-var res = chkPrime(num, num - 1) ? 'PRIME' : 'NOT PRIME';
-console.log(num + ' is ' + res);
-*/
+var n=5,i=n;
+console.log(!rec(n,i)?n+' NOT A PRIME #':n+' IS A PRIME # ');
+
+
 // permutations of string
-/*
+
 (function makeCombination(str) {
 	var len = str.length - 1;
 	var res = '';
@@ -167,10 +165,10 @@ console.log(num + ' is ' + res);
 
 		console.log(res);
 	}
-})('dog');*/
+})('dog');
 
 //permutations of string with recursion
-/*function makeCombinationRec(str) {
+function makeCombinationRec(str) {
 	var len = str.length;
 
 	if (len === 1) {
@@ -194,7 +192,7 @@ console.log(num + ' is ' + res);
 console.log(makeCombinationRec('dog'));
 
 //fibonacci Number
-/*function fibonacci(n) {
+function fibonacci(n) {
 	var res = [0, 1];
 
 	if (n <= 2) return 1;
@@ -204,24 +202,24 @@ console.log(makeCombinationRec('dog'));
 	}
 	return res + ' ' + res[n];
 }
-console.log(fibonacci(12));*/
-/*
+console.log(fibonacci(12));
+
 //fibonacci with recursion
 function fibo(inc) {
 	if (inc <= 1) return inc;
 	return fibo(inc - 1) + fibo(inc - 2);
 }
-console.log(fibo(12));*/
-/*
+console.log(fibo(12));
+
 // string reverse using recursion
 function rever(str) {
 	if (str.length == 1) return str;
 
 	return rever(str.slice(1, str.length)) + str.charAt(0);
 }
-console.log(rever('OLLEH'));*/
+console.log(rever('OLLEH'));
 
-/*count chars in string
+/*count chars in string*/
 console.log(((str)=>{
 var arr = [];
 for (var i = 0; i < str.length; i++) {
@@ -233,7 +231,7 @@ return arr;
 })('ppiiyyuusshhh'));
 /**/
 
-/* quick sort
+/* quick sort*/
 
 function quickSORT(arr){
   if(arr.length <= 1)return arr;
@@ -256,7 +254,7 @@ console.log(quickSORT([,100,5,1,8,2,9,3]));
 
 /***/
 
-/*
+
 function bubbleSORT(arr)
 {
 for(i = 0; i < arr.length-1; i++){
@@ -276,7 +274,7 @@ return arr;
 
 console.log(bubbleSORT([8,1,6,3,5,2]));
 /**/
-/*Merge sort
+/*Merge sort*/
 
 function mergeSORT(arr){
   if(arr.length < 2){
@@ -310,7 +308,7 @@ function mergeSORT(arr){
 console.log(mergeSORT([14,9,3,7,55,2,5,1,4]));
 
 /**/
-/*longest palindrome
+/*longest palindrome*/
 function chkPalin(str){
   if(str === '' || str.length === 1){
     return true;
