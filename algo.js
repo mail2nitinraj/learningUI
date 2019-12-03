@@ -38,13 +38,14 @@ function fact(n) {
 	return n * fact(n - 1);
 }
 ////////////////////
-var num = 7;
-var res = num;
+var n = 5;
 
-for (i = 0; i < num - 1; i++) {
-	res = res * (num - 1 - i);
+for(i=n ; i>1 ; i--){
+  console.log('IN :: ',i);
+n = n*(i-1);
+console.log(n);
 }
-console.log(res);
+
 /////////////////////
 var str = 'Web Development Tutorial';
 
@@ -101,6 +102,24 @@ function test(str) {
 
 	return test(str.substr(1)) + str.charAt(0);
 }
+/////////////////////
+var str = 'sample';
+var res = '';
+var c = '';
+
+function rec(n){
+
+if(n=='' || n.length==0){
+  return n;
+}
+res = n.split('');
+c = res.pop();
+//console.log(c);
+return c + rec(res.join(''));
+}
+
+console.log(rec(str));
+
 //////////////////////
 function all1(str) {
 	var arr = [];
@@ -132,6 +151,20 @@ function chk2(str) {
 	}
 	return status;
 }
+/////////////////////////
+function checkPalin(str){
+
+	var arr = str.split('');
+	var len = arr.length-1;
+	for(i in arr){
+		console.log(arr[i],arr[len-i]);
+		if(arr[i] != arr[len-i]) return false;
+	}
+
+	return true;
+}
+
+console.log(checkPalin('MMMMMMMM'));
 ///////////////////////
 
 var obj = {};
@@ -199,3 +232,67 @@ function mergeSort(sourceArray) {
 	return merge(left, right);
 }
 console.log(mergeSort([5, 3, 8, 2, 9, 55, 22, 88, 11, 1]));
+//////////////////// mostly occurred letter in string
+console.log(( (str)=>{
+
+
+return str.split('').reduce(function(p, v,i){
+	var av = [...v];
+    var reg = new RegExp(av,'gi');
+   var l = str.match(reg).length;
+
+   p = l>p.o ? {v: v, o: l} : {v: p.v, o: p.o}
+	//console.log(av, '   ',l, 'p',p);
+return p;
+},{v: 0, o: 0})
+
+
+})("Hello World"));
+
+
+///////////////////////
+////INSERTION SORT////
+
+
+const insertionSort = (nums) => {
+  for (let i = 1; i < nums.length; i++) {
+    let j = i - 1
+    let tmp = nums[i]
+    while (j >= 0 && nums[j] > tmp) {
+      nums[j + 1] = nums[j]
+      j--
+    }
+    nums[j+1] = tmp
+  }
+  return nums
+}
+
+console.log(insertionSort([6,1,5,3,9,2]));
+
+////////
+/////SELECTION SORT////
+function selectionSort(arr) {
+
+  for(i=0; i<arr.length ; i++){
+    let min = i;
+    for(j=i+1; j<arr.length ; j++){
+      if(arr[j] <  arr[min]){
+        min = j;
+      }
+
+    }
+    if(min != i){
+    let tmp = arr[min];
+    arr[min] = arr[i];
+    arr[i] = tmp;
+    }
+  }
+
+return arr;
+
+}
+
+
+console.log((selectionSort([9,3,6,1,4,2])));
+
+/////////////////////
