@@ -13,5 +13,9 @@ describe('utility test suite', function() {
 			}),
 			'address'
 		);
+
+		assert.equal(utility.mySize(function(len){
+			return len;
+		}),2);
 	});
 });

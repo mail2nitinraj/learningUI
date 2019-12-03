@@ -7,6 +7,11 @@ var Utility = function(size) {
 		}
 		return null;
 	};
+
+	this.mySize = function(callbk){
+   return callbk(Object.keys(this.localObject).length);
+
+	}
 };
 
 module.exports = Utility;
