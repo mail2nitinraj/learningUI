@@ -1,4 +1,4 @@
-# learningUI
+# LearningUI
 
 ###### This is a project having various utilities javascript functions implemented , just for the learning purposes.
 
